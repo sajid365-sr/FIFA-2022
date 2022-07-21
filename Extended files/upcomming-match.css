@@ -1,3 +1,8 @@
+
+                        /* ====== UPCOMING MATCH STYLE ====== */
+
+
+
 /* Fonts */
 
 /* Open Sans */
@@ -100,7 +105,7 @@ h6 {
 
 /* Top banner ends */
 
-/* News section starts */
+/* upcoming match section starts */
 
 .full-container{
     display: flex;
@@ -142,104 +147,58 @@ h6 {
     font-weight: 500;
     cursor: pointer;
     transition: all 0.5s;
+    border: none;
     
 }
 
- .aside .upcoming-match:hover{
-     background-color: rgb(208, 96, 96);
-     color: white;
- }
- .aside .all-group:hover{
-     background-color: rgb(208, 96, 96);
-     color: white;
- }
-.aside .blogs{
+.upcoming-match{
     background-color: red;
     color: white;
+}
+.all-group:hover{
+    background-color: rgb(208, 96, 96);
+    color: white;
+
+}
+.blogs:hover{
+    background-color: rgb(208, 96, 96);
+    color: white;
+
 }
 .main-content{
     display: grid;
     grid-template-columns: repeat(3,1fr);
     gap: 20px;
-    flex-grow: 1;
     width: 75%;
 }
-.news{
-    
-    display: flex;
-    flex-direction: column;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    width: 100%;
-}
-.news .thumbnail{
-    width: 100%;
-    height: 50%;
-}
-.news .thumbnail img{
-    width: 100%;
-    border-radius: 10px 10px 0px 0px;
-    transform: scale(0.95);
-}
-.news .thumbnail img:hover{
-    transition: transform 0.7s ease-in-out;
-    transform: scale(1);
-}
-.news-info{
-    padding: 10px;
+
+
+.matches{
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: relative;
-    height: 50%;
-}
-.news-info .View{
-    padding: 5px 20px;
-    border: none;
-    background-color: darkslateblue;
-    color: white;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 14px;
-}
-.news-info .View:hover{
-    transform: scale(1.1);
-    background-color: rgba(0, 0, 0, 0.185);
-    color: black;
-    transition: all 0.5s linear;
-    box-shadow: 3px 3px 10px grey;
-   
-}
-.news-info h5{
-    font-weight: 600;
-    margin-top: 8px;
-    padding-bottom: 40px;
-    margin-bottom: 0px;
-}
-.news-info h5:hover{
-    color: rgb(53, 53, 247);
-    text-decoration: underline;
-    text-decoration-thickness: 2px;
-    cursor: pointer;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding:40px 20px;
+    box-sizing: border-box;
+    background-color: lightblue
     
 }
-.reaction{
-    display: flex;
-    gap: 30px;
-    position: absolute;
-    bottom: 10px;
-    
-}
-.reaction span{
+.matches .flag{
     display: flex;
     gap: 15px;
     align-items: center;
-    
+}
+.matches .flag img{
+    height: 45px;
+    width: 75px;
+}
+.matches .country h4{
+    margin-bottom: 5px;
 }
 
-/* News section ends */
 
-
+/* <upcoming match section ends */
 
 
 /* Footer starts */
@@ -252,7 +211,11 @@ footer {
     margin-top: 100px;
     border-radius: 15px 15px 0px 0px;
 }
-
+.footer-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 footer .goal {
     margin-top: 90px;
 }
@@ -284,8 +247,8 @@ hr {
     }
 }
 
-footer:hover>hr {
-    animation: hrwidth 2s linear 0.3s infinite alternate;
+.footer-content:hover>hr {
+    animation: hrwidth 2s linear infinite alternate;
 }
 
 /* Hr animation ends */
@@ -350,10 +313,13 @@ footer:hover>hr {
 
 /* Footer ends */
 
+                    /* ========== Mobile Responsive ========== */
 
-/* Mobile Responsive */
+@media only screen and (max-width:688px){
 
-@media only screen and (max-width:688px) {
+/* Top banner starts */
+
+
     .top-banner{
         display: flex;
         width: 100%;
@@ -375,14 +341,19 @@ footer:hover>hr {
         padding: 0;
     }
     .intro h1 {
-        font-size: 30px;
+        font-size: 25px;
         font-weight: 600;
        line-height: normal;
         margin-bottom: 0px;
         text-align: center;
+        margin-top: 5px;
     }
     .intro p{
         text-align: center;
+        margin: 20px 0px;
+    }
+    .intro p .elipsis-text{
+        display: none;
     }
 .player{
     display: flex;
@@ -394,6 +365,11 @@ footer:hover>hr {
     height: 70%;
     margin-left: 30px;
 }
+
+/* Top banner ends */
+
+/* Aside starts */
+
 .full-container{
     margin-top: 30px;
 }
@@ -409,6 +385,7 @@ footer:hover>hr {
 .aside a{
     display: flex;
     justify-content: center;
+    color: black;
 }
 .aside a button{
     border: 2px solid #ddd;
@@ -419,6 +396,7 @@ footer:hover>hr {
 }
 .aside a .upcoming-match{
     width: 100%;
+    background-color: red;
 }
 .aside a .all-group{
     width: 65%;
@@ -426,45 +404,113 @@ footer:hover>hr {
 .aside a .blogs{
     width: 65%;
 }
+
+/* Aside ends */
+
+/* upcoming match section starts */
+
+/* Main content starts */
+
 .main-content{
-    width: 100%;
+    width: 90%;
     grid-template-columns: repeat(1,1fr);
+    justify-items: center;
 }
-.news{
-    gap: 15px;
+.matches{
+    width: 100%;
 }
-.news-info{
-    align-items: flex-start;
-    gap: 20px;
-    padding: 20px;
+.matches .flag img {
+    height: 60px;
+    width: 90px;
 }
-.news-info .View {
-    padding: 7px 25px;
-    border: none;
-    background-color: darkslateblue;
-    color: white;
-    cursor: pointer;
-    border-radius: 5px;
+.matches .flag small{
     font-size: 25px;
 }
-.news-info h5{
-    font-size: 20px;
+
+/* Main content ends */
+
+/* upcoming match section ends */
+
+/* Footer starts */
+
+.footer-content .goal{
+    margin-top: 30px;
+}
+.footer-content .goal h1{
+    font-size: 35px;
+}
+.footer-menu{
+    margin-bottom: 0px;
 }
 .footer-menu ul{
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-left: 0px;
+    gap: 10px;
 }
+.social-links ul{
+    gap: 15px;
+    padding-left: 0px;
+}
+.social-links ul li a{
+    font-size: 30px;
+}
+hr{
+    margin: 30px 0px;
+}
+
+
+/* Footer ends */
 
 }
 
-/* Tablet responsive */
+                    /* ========== Tablet Responsive ========== */
 
 @media only screen and (min-width:689px) and (max-width:988px){
 
+    /* Top banner starts */
+
+.container{
+    width: 95%;
+    height: 75vh;
+}
+.intro{
+    padding-left: 70px;
+    justify-content: center;
+}
+.intro h1{
+    font-size: 45px;
+    margin-top: 0px;
+    line-height: 55px;
+}
+.intro p{
+    margin-top: 15px;
+}
+.intro p .elipsis-text{
+    display: none;
+}
+.player{
+    position: relative;
+}
+.player img{
+    position: relative;
+    left: 10px;
+    top: 25px;
+    width: 90%;
+    transform: scale(0.9);
+}
+
+/* Top banner ends */
+
+
+/* upcoming match section starts */
+
+/* Main content */
+
 .main-content{
     grid-template-columns: repeat(2,1fr);
+    width: 100%;
 }
 .flex-container{
     flex-direction: column;
@@ -478,4 +524,64 @@ footer:hover>hr {
     height: auto;
     width: 100%;
 }
+.aside a button{
+    border: 2px solid #ddd;
+    background-color: white;
+    font-size: 22px;
+    font-weight: 700;
+    
 }
+.aside a .upcoming-match{
+    width: 100%;
+    background-color: red;
+}
+.flex-container{
+    width: 90vw;
+}
+.matches .flag img {
+    height: 60px;
+    width: 90px;
+}
+.matches .flag small{
+    font-size: 25px;
+}
+.country{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.country h4{
+    font-size: 22px;
+    font-weight: 600;
+}
+.country small{
+    font-size: 18px;
+}
+
+/* upcoming match section ends */
+
+/* Footer starts */
+
+footer{
+    margin-top: 80px;
+}
+.footer-menu ul{
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 18px;
+    width: 100%;
+    padding-left: 0px;
+    
+}
+.footer-content{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* Footer ends */
+
+
+}                    
